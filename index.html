@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stone Paper Scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" async></script>
+  </head>
+  <body>
+    <div class="game-container">
+      <div class="score-container">
+        <div class="score-container-text">
+          ROCK <br />
+          PAPER <br />
+          SCISSORS
+        </div>
+        <div class="score-container-score">
+          <div id="c-score">
+            COMPUTER SCORE
+            <p id="computer-score">0</p>
+          </div>
+          <div>
+            YOUR <br />
+            SCORE
+            <p id="player-score">0</p>
+          </div>
+        </div>
+      </div>
+      <button
+        id="stone"
+        class="stone btn"
+        onclick="pcSelect(this.id); showText(this.id)"
+      >
+        <img
+          src="./assets/noun-rock-88661.png"
+          alt=""
+          width="80px"
+          height="55px"
+        />
+      </button>
+      <button
+        id="scissors"
+        class="scissors btn"
+        onclick="pcSelect(this.id); showText(this.id)"
+      >
+        <img
+          src="./assets/noun-scissors-88666.png"
+          alt=""
+          width="37px"
+          height="55px"
+        />
+      </button>
+      <button
+        id="paper"
+        class="paper btn"
+        onclick="pcSelect(this.id); showText(this.id)"
+      >
+        <img
+          src="./assets/noun-paper-88662.png"
+          alt=""
+          width="72px"
+          height="72px"
+        />
+      </button>
+      <div id="triangle-side1"></div>
+      <div id="triangle-side2"></div>
+      <div id="triangle-side3"></div>
+      <div class="rules-container">
+        <button id="cross-button" onclick="hideRules()">X</button>
+        <p>Game Rules</p>
+        <div class="rules-list-container">
+          <ul>
+            <li>
+              <span
+                >Rock beats scissors, scissors beat paper, and paper beats
+                rock.</span
+              >
+            </li>
+            <li>
+              <span
+                >Agree ahead of time whether you will count off “rock, paper,
+                scissors, shoot” or just “rock, paper, scissors.”</span
+              >
+            </li>
+            <li>
+              <span
+                >Use rock, paper, scissors to settle minor decisions or simply
+                play to pass the time.</span
+              >
+            </li>
+            <li>
+              <span
+                >If both players lay down the same hand, each player lays down
+                another hand.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button id="rules" onclick="displayRules()">RULES</button>
+      <!-- ELEMENTS FOR JS -->
+      <p id="win-para" class="win-para" style="display: none;">
+        YOU WIN <br />
+        <span class="win-para-span">AGAINST PC</span>
+      </p>
+      <div class="win-page-text-container" style="display: none;">
+        <p id="win-page-para" class="win-page-para">
+          HURRAY!! <br />
+          <span class="win-page-para-span">YOU WON THE GAME</span>
+        </p>
+      </div>
+      <div class="trophy-container" style="display: none;">
+        <img src="./assets/trophy.png" alt="" width="200px" height="200px" />
+      </div>
+      <img class = "star" src="./assets/star.png" alt="" id="star1" width="30px" height="30px" style="display: none;">
+      <img class = "star" src="./assets/star.png" alt="" id="star2" width="100px" height="100px" style="display: none;">
+      <img class = "star" src="./assets/star.png" alt="" id="star3" width="100px" height="100px" style="display: none;">
+      <img class = "star" src="./assets/star.png" alt="" id="star4" width="50px" height="50px" style="display: none;">
+      <img class = "star" src="./assets/star.png" alt="" id="star5" width="100px" height="100px" style="display: none;">
+      <button id="next" class="next" onclick="winPage()" style="display: none;">NEXT</button>
+      <button id="play-again" class="play-again" onclick="playAgain()" style="display: none;">
+        PLAY AGAIN
+      </button>
+      <!-- COMPUTER WIN -->
+      <div class="computer-win-text-container" style="display: none;">
+        <p>YOU LOST <br> <span class="computer-win-text-span">AGAINST PC</span></p>
+      </div>
+      <!-- MATCH TIE -->
+      <div class="match-tie-text-container">
+        <p class="computer-win-text-container" id="match-tie-text" style="display: none;">TIE UP</p>
+      </div>
+      <button id="replay" class="play-again" style="display: none;">REPLAY</button>
+      <!-- TEXT AFTER SELECTION -->
+      <div class="same-selection" style="display: none;">
+        <p>YOU AND PC PICKED</p>
+      </div>
+      <div class="you-picked" style="display: none;"><p class="you-picked-text">YOU PICKED</p></div>
+      <div class="pc-picked" style="display: none;"><p class="pc-picked-text">PC PICKED</p></div>
+    </div>
+  </body>
+</html>
