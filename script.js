@@ -198,7 +198,7 @@ const computerWin = (num, id) => {
   setTimeout(() => {
     document.getElementById(id).style.display = "none";
     document.getElementById(options[num]).style.display = "none";
-  }, 1000);
+  }, 1500);
   setTimeout(() => {
     document.querySelector(".rules-container").style.display = "none";
     document.querySelector("#stone").style.display = "none";
@@ -209,21 +209,25 @@ const computerWin = (num, id) => {
     document.querySelector("#triangle-side3").style.display = "none";
     document.querySelector(".you-picked").style.display = "none";
     document.querySelector(".pc-picked").style.display = "none";
-    document.querySelector(".computer-win-text-container").style.display =
-      "none";
   }, 1500);
 };
 
 const matchTie = (num, id) => {
   document.querySelector(".match-tie-text-container").style.display =
-    "inline-block";
-};
-
-const showText = (id) => {
-  if (options[num] == id) {
-    const sameText = document.querySelector("#same-selection");
-    sameText.style.display = "inline-block";
-  }
+        "inline-block";
+    document.querySelector(".match-tie-text").style.display =
+        "inline-block";
+    setTimeout(() => {
+      document.querySelector(".rules-container").style.display = "none";
+      document.querySelector("#stone").style.display = "none";
+      document.querySelector("#paper").style.display = "none";
+      document.querySelector("#scissors").style.display = "none";
+      document.querySelector("#triangle-side1").style.display = "none";
+      document.querySelector("#triangle-side2").style.display = "none";
+      document.querySelector("#triangle-side3").style.display = "none";
+      document.querySelector("#triangle-side3").style.display = "none";
+      document.querySelector(".match-tie-text").style.display = "inline-block";
+    }, 1500);
 };
 
 const playAgain = () => {
